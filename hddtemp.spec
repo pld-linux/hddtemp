@@ -6,7 +6,9 @@ Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	http://coredump.free.fr/linux/%{name}-%{version}.tar.gz
+# Source0-md5:	d703f6488850df6a6aeb21beee8a3895
 Source1:	http://coredump.free.fr/linux/%{name}.db
+# Source1-md5:	073c1c478b506ef71e7229914b99e773
 Patch0:		%{name}-types.patch
 URL:		http://coredump.free.fr/linux/harddrive.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
