@@ -45,5 +45,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc Changelog README TODO
 %attr(755,root,root) %{_sbindir}/*
 %{_sysconfdir}/*
