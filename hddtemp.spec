@@ -1,3 +1,5 @@
+# TODO:
+# - it can work as daemon - make separate subpackage with that.
 %define		_beta	beta8
 Summary:	HDD temperature sensor
 Summary(pl):	Czujka temperatury dysku twardego
@@ -30,17 +32,18 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 %setup -q -n %{name}-%{version}-%{_beta}
 
 %build
-%configure --with-db-path=/usr/share/misc/hddtemp.db
+%configure \
+	--with-db-path=%{_datadir}/misc/hddtemp.db
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir},/usr/share/misc/}
+install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_datadir}/misc/}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT/usr/share/misc/hddtemp.db
+install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/misc/hddtemp.db
 
 %find_lang %{name}
 
@@ -52,4 +55,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README TODO
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
-/usr/share/misc/*
+%{_datadir}/misc/*
