@@ -24,6 +24,8 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 
 %prep
 %setup -q
+sed 's@/usr/share@&/misc@' hddtemp.c > hddtemp.c-
+mv -f hddtemp.c- hddtemp.c
 
 %build
 %{__make} \
@@ -37,10 +39,10 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir}}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir}/misc}
 
 install hddtemp $RPM_BUILD_ROOT%{_sbindir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/misc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/*
-%{_datadir}/*
+%{_datadir}/misc/*
