@@ -30,26 +30,31 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 %setup -q -n %{name}-%{version}-%{_beta}
 
 %build
-%configure
+%configure --with-db-path=/usr/share/misc/hddtemp.db
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_sysconfdir}
+install -d $RPM_BUILD_ROOT{%{_sysconfdir},/usr/share/misc/}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}
+install %{SOURCE1} $RPM_BUILD_ROOT/usr/share/misc/hddtemp.db
 
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+
+echo "Recognised hdd's with S.M.A.R.T support & temperature sensors are:"
+/usr/sbin/hddtemp  /dev/hd[a-z] 2>/dev/null
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
-%{_sysconfdir}/*
+/usr/share/misc/*
