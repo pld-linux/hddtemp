@@ -32,11 +32,7 @@ mv -f hddtemp.c- hddtemp.c
 %build
 %{__make} \
 	CC="%{__cc}" \
-%ifarch %ix86	
 	CFLAGS="%{rpmcflags} -DARCH_I386" \
-%else
-	CFLAGS="%{rpmcflags}" \
-%endif
 	LDFLAGS="%{rpmldflags}"
 
 %install
