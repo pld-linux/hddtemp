@@ -1,18 +1,18 @@
 # TODO:
 # - it can work as daemon - make separate subpackage with that.
-%define		_beta	beta8
+%define		_beta	beta12
 Summary:	HDD temperature sensor
 Summary(pl):	Czujka temperatury dysku twardego
 Name:		hddtemp
 Version:	0.3
-Release:	0.%{_beta}.2
-License:	GPL
+Release:	0.%{_beta}.1
+License:	GPL v2
 Group:		Applications/System
-Source0:	http://coredump.free.fr/linux/%{name}-%{version}-%{_beta}.tar.bz2
-# Source0-md5:	3b823db40872efdc03a00b7170e28b23
-Source1:	http://coredump.free.fr/linux/%{name}.db
-# NoSource1-md5: 33b51858f61cd4ca1756d0396c9d6714
-URL:		http://coredump.free.fr/linux/hddtemp.php
+Source0:	http://www.guzu.net/linux/%{name}-%{version}-%{_beta}.tar.bz2
+# Source0-md5:	51f19658fa6e745eee62f6e100838884
+Source1:	http://www.guzu.net/linux/%{name}.db
+# Source1-md5:	f816512c3feee3cc9a92a9a8d27e9cff
+URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,7 +39,7 @@ cp -f /usr/share/automake/config.* .
 %{__make}
 
 %install
-rm -rf $RPM_BUILD_ROOT
+#rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_datadir}/misc/}
 
 %{__make} install \
@@ -50,11 +50,11 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/misc/hddtemp.db
 %find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+#rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
 %attr(755,root,root) %{_sbindir}/*
-%{_mandir}/man1/*
+%{_mandir}/man8/*
 %{_datadir}/misc/*
