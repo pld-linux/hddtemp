@@ -2,7 +2,7 @@ Summary:	HDD temperature sensor
 Summary(pl):	Czujka temperatury dysku twardego
 Name:		hddtemp
 Version:	0.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	http://coredump.free.fr/linux/%{name}-%{version}.tar.gz
