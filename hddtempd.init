@@ -25,7 +25,7 @@ case "$1" in
 	# Check if the service is already running?
 	if [ ! -f /var/lock/subsys/hddtempd ]; then
 		msg_starting hddtempd
-		daemon /usr/sbin/hddtemp -d $H_DRIVES 
+		daemon /usr/sbin/hddtemp -d $HDDTEMP_OPTIONS $H_DRIVES 
 		RETVAL=$?
 		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/hddtempd		
 	else
@@ -33,10 +33,10 @@ case "$1" in
 	fi
 	;;
   stop)
-	if [ -f /var/lock/subsys/sshd ]; then
+	if [ -f /var/lock/subsys/hddtempd ]; then
 		msg_stopping hddtempd
 		killproc hddtemp
-		rm -f /var/lock/subsys/sshd >/dev/null 2>&1
+		rm -f /var/lock/subsys/hddtempd >/dev/null 2>&1
 	else
 		msg_not_running hddtempd
 	fi	
