@@ -9,7 +9,7 @@ Group:		Applications/System
 Source0:	http://coredump.free.fr/linux/%{name}-%{version}-%{_beta}.tar.bz2
 # Source0-md5:	3b823db40872efdc03a00b7170e28b23
 Source1:	http://coredump.free.fr/linux/%{name}.db
-# Source1-md5:	58154e9489ec412fbe7c1cabc8d38c6d
+# Source1-md5:	33b51858f61cd4ca1756d0396c9d6714
 URL:		http://coredump.free.fr/linux/hddtemp.php
 BuildRequires:	gettext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
