@@ -11,7 +11,7 @@ Group:		Applications/System
 Source0:	http://www.guzu.net/linux/%{name}-%{version}-%{_beta}.tar.bz2
 # Source0-md5:	51f19658fa6e745eee62f6e100838884
 Source1:	http://www.guzu.net/linux/%{name}.db
-# Source1-md5:	2f831d9203e096fe06064adbe7533b31
+# NoSource1-md5: 2f831d9203e096fe06064adbe7533b31
 URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -39,7 +39,7 @@ cp -f /usr/share/automake/config.* .
 %{__make}
 
 %install
-#rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_datadir}/misc/}
 
 %{__make} install \
@@ -50,7 +50,7 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/misc/hddtemp.db
 %find_lang %{name}
 
 %clean
-#rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
