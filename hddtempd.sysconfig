@@ -1,0 +1,11 @@
+#
+# Define here hard drive(s) to monitor by hddtemp.
+# For example H_DRIVES="/dev/hda"
+#
+H_DRIVES=""
+
+#
+# Listen on localhost 
+#
+HDDTEMP_OPTIONS="-l 127.0.0.1"
+

@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# hddtempd	hddtempd (hddtemp daemon)
+#
+# chkconfig:	345 93 11
+#
+# description:	small utility that gives you the temperature of \
+#		your hard drive by reading S.M.A.R.T. \
+#		informations (for drives that support this feature)	
+
+
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+# Get service config
+[ -f /etc/sysconfig/hddtempd ] && . /etc/sysconfig/hddtempd
+
+
+
+RETVAL=0
+
+case "$1" in
+  start)
+	# Check if the service is already running?
+	if [ ! -f /var/lock/subsys/hddtempd ]; then
+		msg_starting hddtempd
+		daemon /usr/sbin/hddtemp -d $H_DRIVES 
+		RETVAL=$?
+		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/hddtempd		
+	else
+		msg_already_running hddtempd
+	fi
+	;;
+  stop)
+	if [ -f /var/lock/subsys/sshd ]; then
+		msg_stopping hddtempd
+		killproc hddtemp
+		rm -f /var/lock/subsys/sshd >/dev/null 2>&1
+	else
+		msg_not_running hddtempd
+	fi	
+	;;
+  restart)
+	$0 stop
+	$0 start
+	exit $?
+	;;
+  status)
+	status hddtempd
+	exit $?
+	;;
+  *)
+	msg_usage "$0 {start|stop|restart|status}"
+	exit 3
+esac
+
+exit $RETVAL
+
