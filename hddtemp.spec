@@ -8,7 +8,7 @@ Group:		Applications/System
 Source0:	http://coredump.free.fr/linux/%{name}-%{version}-beta6.tar.gz
 # Source0-md5:	884bdfc69dcdcb16e20159185c56efae
 Source1:	http://coredump.free.fr/linux/%{name}.db
-# Source1-md5:	82ad138ec365635dc2bf28d6636f994f
+# Source1-md5:	a0e8be49b06c3fbb0142f8b36370aae9
 URL:		http://coredump.free.fr/linux/hddtemp.php
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,8 +26,6 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 
 %prep
 %setup -q -n %{name}-%{version}-beta6
-sed 's@/usr/share@&/misc@' hddtemp.c > hddtemp.c-
-mv -f hddtemp.c- hddtemp.c
 
 %build
 %{__make} \
@@ -37,10 +35,10 @@ mv -f hddtemp.c- hddtemp.c
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir}/misc}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_sysconfdir}}
 
 install hddtemp $RPM_BUILD_ROOT%{_sbindir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/misc
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,4 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/*
-%{_datadir}/misc/*
+%{_sysconfdir}/*
