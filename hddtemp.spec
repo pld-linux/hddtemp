@@ -11,7 +11,7 @@ Group:		Applications/System
 Source0:	http://www.guzu.net/linux/%{name}-%{version}-%{_beta}.tar.bz2
 # Source0-md5:	51f19658fa6e745eee62f6e100838884
 Source1:	http://www.guzu.net/linux/%{name}.db
-# Source1-md5:	f816512c3feee3cc9a92a9a8d27e9cff
+# Source1-md5:	2f831d9203e096fe06064adbe7533b31
 URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
 BuildRequires:	gettext-devel
