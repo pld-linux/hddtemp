@@ -5,7 +5,7 @@
 H_DRIVES=""
 
 #
-# Listen on localhost 
+# Listen on localhost
 #
 HDDTEMP_OPTIONS="-l 127.0.0.1"
 
