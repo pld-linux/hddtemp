@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/System
 Source0:	http://coredump.free.fr/linux/%{name}-%{version}.tar.gz
 Source1:	http://coredump.free.fr/linux/%{name}.db
+URL:		http://coredump.free.fr/linux/harddrive.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
