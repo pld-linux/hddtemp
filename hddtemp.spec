@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/System
 Source0:	http://coredump.free.fr/linux/%{name}-%{version}.tar.gz
 Source1:	http://coredump.free.fr/linux/%{name}.db
+Patch0:		%{name}-types.patch
 URL:		http://coredump.free.fr/linux/harddrive.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -24,6 +25,7 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 
 %prep
 %setup -q
+%patch0 -p1
 sed 's@/usr/share@&/misc@' hddtemp.c > hddtemp.c-
 mv -f hddtemp.c- hddtemp.c
 
