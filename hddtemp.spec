@@ -5,7 +5,7 @@ Summary:	HDD temperature sensor
 Summary(pl):	Czujka temperatury dysku twardego
 Name:		hddtemp
 Version:	0.3
-Release:	0.%{_beta}.1
+Release:	0.%{_beta}.2
 License:	GPL
 Group:		Applications/System
 Source0:	http://coredump.free.fr/linux/%{name}-%{version}-%{_beta}.tar.bz2
@@ -13,6 +13,7 @@ Source0:	http://coredump.free.fr/linux/%{name}-%{version}-%{_beta}.tar.bz2
 Source1:	http://coredump.free.fr/linux/%{name}.db
 # NoSource1-md5: 33b51858f61cd4ca1756d0396c9d6714
 URL:		http://coredump.free.fr/linux/hddtemp.php
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,6 +33,7 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 %setup -q -n %{name}-%{version}-%{_beta}
 
 %build
+cp -f /usr/share/automake/config.* .
 %configure \
 	--with-db-path=%{_datadir}/misc/hddtemp.db
 %{__make}
