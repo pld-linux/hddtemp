@@ -1,16 +1,15 @@
 Summary:	HDD temperature sensor
 Summary(pl):	Czujka temperatury dysku twardego
 Name:		hddtemp
-Version:	0.2
-Release:	2
+Version:	0.3
+Release:	0.1
 License:	GPL
 Group:		Applications/System
-Source0:	http://coredump.free.fr/linux/%{name}-%{version}.tar.gz
-# Source0-md5:	d703f6488850df6a6aeb21beee8a3895
+Source0:	http://coredump.free.fr/linux/%{name}-%{version}-beta6.tar.gz
+# Source0-md5:	884bdfc69dcdcb16e20159185c56efae
 Source1:	http://coredump.free.fr/linux/%{name}.db
-# Source1-md5:	073c1c478b506ef71e7229914b99e773
-Patch0:		%{name}-types.patch
-URL:		http://coredump.free.fr/linux/harddrive.html
+# Source1-md5:	82ad138ec365635dc2bf28d6636f994f
+URL:		http://coredump.free.fr/linux/hddtemp.php
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,8 +25,7 @@ posiadaj± czujkê temperatury. hddtemp nie potrafi odczytaæ informacji
 S.M.A.R.T. z urz±dzeñ SCSI.
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}-%{version}-beta6
 sed 's@/usr/share@&/misc@' hddtemp.c > hddtemp.c-
 mv -f hddtemp.c- hddtemp.c
 
