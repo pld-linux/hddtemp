@@ -31,10 +31,7 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 
 %build
 %configure
-%{__make} \
-	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}" \
-	LDFLAGS="%{rpmldflags}"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
