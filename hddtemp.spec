@@ -33,7 +33,7 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 %configure
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -DARCH_I386" \
+	CFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
