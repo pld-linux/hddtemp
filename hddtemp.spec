@@ -13,14 +13,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 hddtemp is tool that give you the temperature of your IDE hard drive
 by reading S.M.A.R.T. informations. Only moderns hard drives have a
-temperature sensor. SCSI doesn't allow reading S.M.A.R.T.
-informations.
+temperature sensor. hddtemp doesn't support reading S.M.A.R.T.
+informations from SCSI devices.
 
 %description -l pl
 hddtemp jest narzêdziem sprawdzaj±cym temperaturê dysku twardego IDE
 korzystaj±c z technologii S.M.A.R.T. Tylko nowoczesne dyski twarde
-posiadaj± czujkê temperatury. SCSI nie pozwala na odczyt informacji ze
-S.M.A.R.T.
+posiadaj± czujkê temperatury. hddtemp nie potrafi odczytaæ informacji
+S.M.A.R.T. z urz±dzeñ SCSI.
 
 %prep
 %setup -q
