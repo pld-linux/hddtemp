@@ -47,7 +47,7 @@ case "$1" in
 	exit $?
 	;;
   status)
-	status hddtempd
+	status hddtemp
 	exit $?
 	;;
   *)
