@@ -9,7 +9,7 @@ Group:		Applications/System
 Source0:	http://www.guzu.net/linux/%{name}-%{version}-%{_beta}.tar.bz2
 # Source0-md5:	bbf8be4539495e18bec54af77511a680
 Source1:	http://www.guzu.net/linux/%{name}.db
-# NoSource1-md5: 2f831d9203e096fe06064adbe7533b31
+# NoSource1-md5: 46ea15d420c59175a592ec700bc12c6a
 Source2:	hddtempd.init
 Source3:	hddtempd.sysconfig
 URL:		http://www.guzu.net/linux/hddtemp.php
