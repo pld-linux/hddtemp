@@ -6,7 +6,7 @@
 #
 # description:	small utility that gives you the temperature of \
 #		your hard drive by reading S.M.A.R.T. \
-#		informations (for drives that support this feature)	
+#		informations (for drives that support this feature)
 
 
 
@@ -25,9 +25,9 @@ case "$1" in
 	# Check if the service is already running?
 	if [ ! -f /var/lock/subsys/hddtempd ]; then
 		msg_starting hddtempd
-		daemon /usr/sbin/hddtemp -d $HDDTEMP_OPTIONS $H_DRIVES 
+		daemon /usr/sbin/hddtemp -d $HDDTEMP_OPTIONS $H_DRIVES
 		RETVAL=$?
-		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/hddtempd		
+		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/hddtempd
 	else
 		msg_already_running hddtempd
 	fi
@@ -39,7 +39,7 @@ case "$1" in
 		rm -f /var/lock/subsys/hddtempd >/dev/null 2>&1
 	else
 		msg_not_running hddtempd
-	fi	
+	fi
 	;;
   restart)
 	$0 stop
