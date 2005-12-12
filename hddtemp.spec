@@ -10,8 +10,8 @@ Source0:	http://www.guzu.net/linux/%{name}-%{version}-%{_beta}.tar.bz2
 # Source0-md5:	bbf8be4539495e18bec54af77511a680
 Source1:	http://www.guzu.net/linux/%{name}.db
 # NoSource1-md5: 46ea15d420c59175a592ec700bc12c6a
-Source2:	hddtempd.init
-Source3:	hddtempd.sysconfig
+Source2:	%{name}d.init
+Source3:	%{name}d.sysconfig
 URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -33,9 +33,9 @@ S.M.A.R.T. z urz±dzeñ SCSI.
 Summary:	hddtemp daemon
 Summary(pl):	Demon hddtemp
 Group:		Daemons
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
+Requires:	rc-scripts
 
 %description hddtempd
 hddtemp in daemon mode.
@@ -91,7 +91,7 @@ fi
 %files hddtempd
 %defattr(644,root,root,755)
 %attr(754,root,root) /etc/rc.d/init.d/hddtempd
-%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/hddtempd
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/hddtempd
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
