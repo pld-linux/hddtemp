@@ -1,8 +1,8 @@
+%define		_beta	beta14
 Summary:	HDD temperature sensor
 Summary(pl):	Czujka temperatury dysku twardego
 Name:		hddtemp
 Version:	0.3
-%define		_beta	beta14
 Release:	0.%{_beta}.1
 License:	GPL v2
 Group:		Applications/System
@@ -15,6 +15,7 @@ Source3:	%{name}d.sysconfig
 URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
 BuildRequires:	gettext-devel
+BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -65,7 +66,6 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/misc/hddtemp.db
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/hddtempd
 install %{SOURCE3} $RPM_BUILD_ROOT/etc/sysconfig/hddtempd
 
-
 %find_lang %{name}
 
 %clean
@@ -73,25 +73,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %post hddtempd
 /sbin/chkconfig --add hddtempd
-if [ -f /var/lock/subsys/hddtempd ]; then
-	/etc/rc.d/init.d/hddtempd restart >&2
-else
+if [ "$1" = 1 ]; then
 	echo "You have to configure hddtempd in /etc/sysconfig/hddtempd."
-	echo "Then run \"/etc/rc.d/init.d/hddtempd start\" to start hddtempd daemon." >&2
 fi
+%service hddtempd restart "hddtempd daemon"
 
 %preun hddtempd
 if [ "$1" = "0" ]; then
-	if [ -f /var/lock/subsys/hddtempd ]; then
-		/etc/rc.d/init.d/hddtempd stop >&2
-	fi
+	%service hddtempd stop
 	/sbin/chkconfig --del hddtempd
 fi
-
-%files hddtempd
-%defattr(644,root,root,755)
-%attr(754,root,root) /etc/rc.d/init.d/hddtempd
-%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/hddtempd
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -99,3 +90,8 @@ fi
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
 %{_datadir}/misc/*
+
+%files hddtempd
+%defattr(644,root,root,755)
+%attr(754,root,root) /etc/rc.d/init.d/hddtempd
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/hddtempd
