@@ -1,5 +1,5 @@
 %define		_beta	beta14
-%define		_rel	2
+%define		_rel	3
 Summary:	HDD temperature sensor
 Summary(pl):	Czujka temperatury dysku twardego
 Name:		hddtemp
@@ -9,8 +9,8 @@ License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.guzu.net/linux/%{name}-%{version}-%{_beta}.tar.bz2
 # Source0-md5:	bbf8be4539495e18bec54af77511a680
-Source1:	http://www.guzu.net/linux/%{name}.db
-# NoSource1-md5: 46ea15d420c59175a592ec700bc12c6a
+# from http://www.guzu.net/linux/hddtemp.db
+Source1:	%{name}.db
 Source2:	%{name}d.init
 Source3:	%{name}d.sysconfig
 URL:		http://www.guzu.net/linux/hddtemp.php
