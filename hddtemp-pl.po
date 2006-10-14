@@ -1,0 +1,235 @@
+# Polish translation for hddtemp.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the 'hddtemp' package.
+# Jakub Bogusz <qboosh@pld-linux.org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hddtemp 0.3-beta15\n"
+"Report-Msgid-Bugs-To: hddtemp@guzu.net\n"
+"POT-Creation-Date: 2005-02-25 22:43+0100\n"
+"PO-Revision-Date: 2006-10-13 22:40+0200\n"
+"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/hddtemp.c:112
+#, c-format
+msgid ""
+"\n"
+"Regexp%s| Value | Description\n"
+"------%s---------------------\n"
+msgstr ""
+"\n"
+"Regexp%s| Warto¶æ | Opis\n"
+"------%s----------------\n"
+
+#: src/hddtemp.c:118
+#, c-format
+msgid "%s%s| %5d | %s\n"
+msgstr "%s%s| %7d | %s\n"
+
+#: src/hddtemp.c:161
+#, c-format
+msgid ""
+"\n"
+"================= hddtemp %s ==================\n"
+"Model: %s\n"
+"\n"
+msgstr ""
+"\n"
+"================= hddtemp %s ==================\n"
+"Model: %s\n"
+"\n"
+
+#: src/hddtemp.c:188
+#, c-format
+msgid ""
+"WARNING: Drive %s doesn't seem to have a temperature sensor.\n"
+"WARNING: This doesn't mean it hasn't got one.\n"
+"WARNING: If you are sure it has one, please contact me (hddtemp@guzu.net).\n"
+"WARNING: See --help, --debug and --drivebase options.\n"
+msgstr ""
+"UWAGA: Dysk %s wydaje siê nie mieæ czujnika temperatury.\n"
+"UWAGA: Nie znaczy to, ze go na pewno nie ma.\n"
+"UWAGA: Je¶li masz pewno¶æ, ¿e ma, proszê skontaktowaæ siê z autorem\n"
+"UWAGA: (hddtemp@duzu.net).\n"
+"UWAGA: Opcje --help, --debug i --drivebase podadz± wiêcej informacji.\n"
+
+#: src/hddtemp.c:192
+#, c-format
+msgid "%s: %s:  no sensor\n"
+msgstr "%s: %s: brak czujnika\n"
+
+#: src/hddtemp.c:197
+#, c-format
+msgid ""
+"WARNING: Drive %s doesn't appear in the database of supported drives\n"
+"WARNING: But using a common value, it reports something.\n"
+"WARNING: Note that the temperature shown could be wrong.\n"
+"WARNING: See --help, --debug and --drivebase options.\n"
+"WARNING: And don't forget you can add your drive to hddtemp.db\n"
+msgstr ""
+"UWAGA: Dysk %s nie wystêpuje w bazie danych obs³ugiwanych dysków\n"
+"UWAGA: Ale przy u¿yciu popularnej warto¶ci co¶ zwraca.\n"
+"UWAGA: Nale¿y mieæ na uwadze, ¿e pokazana temperatura mo¿e byæ z³a.\n"
+"UWAGA: Opcje --help, --debug i --drivebase podadz± wiêcej informacji.\n"
+"UWAGA: I nie nale¿y zapominaæ, ¿e mo¿na dodaæ swój dysk do hddtemp.db\n"
+
+#: src/hddtemp.c:202
+#, c-format
+msgid "%s: %s:  %d%sC or %sF\n"
+msgstr "%s: %s:  %d%sC lub %sF\n"
+
+#: src/hddtemp.c:214
+#, c-format
+msgid "%s: %s: drive is sleeping\n"
+msgstr "%s: %s: dysk jest w stanie u¶pienia\n"
+
+#: src/hddtemp.c:217
+#, c-format
+msgid "%s: %s:  known drive, but it doesn't have a temperature sensor.\n"
+msgstr "%s: %s:  znany dysk, ale nie ma czujnika temperatury.\n"
+
+#: src/hddtemp.c:220
+#, c-format
+msgid "ERROR: %s: %s: unknown returned status\n"
+msgstr "B£¡D: %s: %s: nieznany zwrócony stan\n"
+
+#: src/hddtemp.c:235
+#, c-format
+msgid ""
+"\n"
+"If one of the field value seems to match the temperature, be sure to read\n"
+"the hddtemp man page before sending me a report (section REPORT). Thanks.\n"
+msgstr ""
+"\n"
+"Je¶li jedno z pól wydaje siê zgadzaæ z temperatur±, nale¿y przeczytaæ\n"
+"stronê manuala hddtemp przed wysy³aniem autorowi raportu (sekcja REPORT).\n"
+
+#: src/hddtemp.c:308
+#, c-format
+msgid "ERROR: invalid separator.\n"
+msgstr "B£¡D: nieprawid³owy separator.\n"
+
+#: src/hddtemp.c:319
+#, c-format
+msgid "ERROR: invalid port number.\n"
+msgstr "B£¡D: nieprawid³owy numer portu.\n"
+
+#: src/hddtemp.c:329
+#, c-format
+msgid ""
+" Usage: hddtemp [OPTIONS] DISK1 [DISK2]...\n"
+"\n"
+"   hddtemp displays the temperature of drives supplied in argument.\n"
+"   Drives must support S.M.A.R.T.\n"
+"\n"
+"  -b   --drivebase   :  display database file content that allow hddtemp to\n"
+"                        recognize supported drives.\n"
+"  -D   --debug       :  display various S.M.A.R.T. fields and their values.\n"
+"                        Useful to find a value that seems to match the\n"
+"                        temperature and/or to send me a report.\n"
+"                        (done for every drive supplied).\n"
+"  -d   --daemon      :  run hddtemp in TCP/IP daemon mode (port %d by "
+"default.)\n"
+"  -f   --file=FILE   :  specify database file to use.\n"
+"  -l   --listen=addr :  listen on a specific interface (in TCP/IP daemon "
+"mode).\n"
+"  -n   --numeric     :  print only the temperature.\n"
+"  -p   --port=#      :  port to listen to (in TCP/IP daemon mode).\n"
+"  -s   --separator=C :  separator to use between fields (in TCP/IP daemon "
+"mode).\n"
+"  -S   --syslog=s    :  log temperature to syslog every s seconds.\n"
+"  -q   --quiet       :  do not check if the drive is supported.\n"
+"  -v   --version     :  display hddtemp version number.\n"
+"  -w   --wake-up     :  wake-up the drive if need.\n"
+"  -4                 :  listen on IPv4 sockets only.\n"
+"  -6                 :  listen on IPv6 sockets only.\n"
+"\n"
+"Report bugs or new drives to <hddtemp@guzu.net>.\n"
+msgstr ""
+" Sk³adnia: hddtem [OPCJE] DYSK1 [DYSK2]...\n"
+"\n"
+"   hddtemp wy¶wietla temperaturê dysków podanych jako argumenty.\n"
+"   Dyski musz± obs³ugiwaæ S.M.A.R.T.\n"
+"\n"
+"  -b   --drivebase   : wy¶wietlenie zawarto¶ci pliku bazy danych pozwalaj±cej\n"
+"                       programowi hddtemp rozpoznawaæ obs³ugiwane dyski.\n"
+"  -D   --debug       : wy¶wietlenie ró¿nych pól S.M.A.R.T. oraz ich warto¶ci.\n"
+"                       Przydatne do znalezienia warto¶ci wygl±daj±cej na\n"
+"                       temperaturê i/lub wys³ania autorowi raportu\n"
+"                       (wykonywane dla ka¿dego podanego dysku).\n"
+"  -d   --daemon      : uruchomienie hddtemp w trybie demona TCP/IP (domy¶lnie\n"
+"                       na porcie %d).n"
+"  -f   --file=PLIK   : podanie pliku bazy danych.\n"
+"  -l   --listen=ADR  : nas³uchiwanie na podanym interefejsie (w trybie demona).\n"
+"  -n   --numeric     : wypisanie tylko temperatury.\n"
+"  -p   --port=PORT   : port do nas³uchiwania (w trybie demona TCP/IP).\n"
+"  -s   --separator=Z : separator umieszczany miêdzy polami (w trybie demona).\n"
+"  -S   --syslog=S    : logowanie temperatury do sysloga co ka¿de S sekund.\n"
+"  -q   --quiet       : nie sprawdzanie, czy dysk jest obs³ugiwany.\n"
+"  -v   --version     : wy¶wietlenie informacji o wersji hddtemp.\n"
+"  -w   --wake-up     : obudzenie dysku w razie potrzeby.\n"
+"  -4                 : nas³uchiwanie tylko na gniazdach IPv4.\n"
+"  -6                 : nas³uchiwanie tylko na gniazdach IPv6.\n"
+"\n"
+"B³êdy lub nowe dyski proszê zg³aszaæ na adres <hddtemp@guzu.net>.\n"
+
+#: src/hddtemp.c:522
+#, c-format
+msgid "hddtemp version %s\n"
+msgstr "hddtemp wersja %s\n"
+
+#: src/hddtemp.c:547
+#, c-format
+msgid "ERROR: invalid interval.\n"
+msgstr "B£¡D: nieprawid³owy przedzia³.\n"
+
+#: src/hddtemp.c:547
+msgid "Too few arguments: you must specify one drive, at least.\n"
+msgstr "Zbyt ma³o argumentów: trzeba podaæ co najmniej jeden dysk.\n"
+
+#: src/hddtemp.c:557
+msgid "ERROR: can't use --debug and --daemon or --syslog options together.\n"
+msgstr "B£¡D: nie mo¿na u¿yæ naraz opcji --debug i --daemon lub --syslog.\n"
+
+#: src/hddtemp.c:583
+#, c-format
+msgid "ERROR: %s: can't determine bus type (or this bus type is unknown)\n"
+msgstr "B£¡D: %s: nie mo¿na okre¶liæ typu szyny (lub ten typ szyny jest nieznany)\n"
+
+#: src/ata.c:66 src/scsi.c:68
+msgid "unknown"
+msgstr "nieznany"
+
+#: src/ata.c:98
+#, c-format
+msgid "field(%d)\t = %d\n"
+msgstr "pole(%d)\t = %d\n"
+
+#: src/ata.c:167
+msgid "S.M.A.R.T. not available"
+msgstr "S.M.A.R.T. niedostêpny"
+
+#: src/db.c:180
+#, c-format
+msgid "hddtemp: can't open %1$s: %2$s\n"
+msgstr "hddtemp: nie mo¿na otwozryæ %1$s: %2$s\n"
+
+#: src/db.c:194
+#, c-format
+msgid "ERROR: syntax error at line %1$d in %2$s\n"
+msgstr "B£¡D: b³±d sk³adni w linii %1$d pliku %2$s\n"
+
+#: src/db.c:201
+#, c-format
+msgid "  ERROR: line exceed %1$d characters in %2$s.\n"
+msgstr "  B£¡D: linia przekracza %1$d znaków w %2$s.\n"
+
+#: src/scsi.c:112 src/scsi.c:130
+#, c-format
+msgid "log sense failed : %s"
+msgstr "Polecenie log sense nie powiod³o siê : %s"
