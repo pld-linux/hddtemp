@@ -13,6 +13,7 @@ Source0:	http://www.guzu.net/files/%{name}-%{version}-%{_beta}.tar.bz2
 Source1:	%{name}.db
 Source2:	%{name}d.init
 Source3:	%{name}d.sysconfig
+Source4:	%{name}-pl.po
 URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -47,6 +48,10 @@ hddtemp w trybie demona.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_beta}
+
+cp %{SOURCE4} po/pl.po
+echo 'pl' >> po/LINGUAS
+rm -f po/stamp-po
 
 %build
 cp -f /usr/share/automake/config.* .
