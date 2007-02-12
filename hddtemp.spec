@@ -1,7 +1,7 @@
 %define		_beta	beta15
 %define		_rel	1
 Summary:	HDD temperature sensor
-Summary(pl):	Czujka temperatury dysku twardego
+Summary(pl.UTF-8):   Czujka temperatury dysku twardego
 Name:		hddtemp
 Version:	0.3
 Release:	0.%{_beta}.%{_rel}
@@ -26,15 +26,15 @@ by reading S.M.A.R.T. informations. Only modern hard drives have a
 temperature sensor. hddtemp doesn't support reading S.M.A.R.T.
 informations from SCSI devices.
 
-%description -l pl
-hddtemp jest narzêdziem sprawdzaj±cym temperaturê dysku twardego IDE
-korzystaj±c z technologii S.M.A.R.T. Tylko nowoczesne dyski twarde
-posiadaj± czujnik temperatury. hddtemp nie potrafi odczytaæ informacji
-S.M.A.R.T. z urz±dzeñ SCSI.
+%description -l pl.UTF-8
+hddtemp jest narzÄ™dziem sprawdzajÄ…cym temperaturÄ™ dysku twardego IDE
+korzystajÄ…c z technologii S.M.A.R.T. Tylko nowoczesne dyski twarde
+posiadajÄ… czujnik temperatury. hddtemp nie potrafi odczytaÄ‡ informacji
+S.M.A.R.T. z urzÄ…dzeÅ„ SCSI.
 
 %package hddtempd
 Summary:	hddtemp daemon
-Summary(pl):	Demon hddtemp
+Summary(pl.UTF-8):   Demon hddtemp
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
