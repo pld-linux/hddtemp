@@ -1,7 +1,7 @@
 %define		_beta	beta15
 %define		_rel	1
 Summary:	HDD temperature sensor
-Summary(pl.UTF-8):   Czujka temperatury dysku twardego
+Summary(pl.UTF-8):	Czujka temperatury dysku twardego
 Name:		hddtemp
 Version:	0.3
 Release:	0.%{_beta}.%{_rel}
@@ -34,7 +34,7 @@ S.M.A.R.T. z urządzeń SCSI.
 
 %package hddtempd
 Summary:	hddtemp daemon
-Summary(pl.UTF-8):   Demon hddtemp
+Summary(pl.UTF-8):	Demon hddtemp
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
