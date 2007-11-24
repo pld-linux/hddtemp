@@ -1,5 +1,5 @@
 %define		_beta	beta15
-%define		_rel	1
+%define		_rel	2
 Summary:	HDD temperature sensor
 Summary(pl.UTF-8):	Czujka temperatury dysku twardego
 Name:		hddtemp
