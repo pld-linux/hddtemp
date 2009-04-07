@@ -118,6 +118,7 @@
 "HDS722516VLSA80"               194  C  "Hitachi Deskstar 7K250 160GB 8Mo cache SATA"
 "HDS722580VLSA80"		194  C	"Hitachi Deskstar 7K250 80GB SATA"
 "HDS728040PLAT20"		194  C	"Hitachi Deskstar 7K80 40GB"
+"HDS728080PLA380"		194  C	"Hitachi Deskstar 7K80 80 GB, 7200 RPM, SATA"
 
 "HDS724040KLAT80"               194  C  "Hitachi Deskstar 7K400  400GB 8Mo cache PATA"
 
