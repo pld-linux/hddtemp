@@ -440,6 +440,7 @@
 "WDC WD1200BB-00(FTA|GUA)0"					194 C "Western Digital Caviar EIDE 2MB Cache"
 "WDC WD1200JB-00(EV|FU|GV)A0"					194 C "Western Digital Caviar 120GB Special Edition 8MB" 
 "WDC WD1200JB-22GVA0"						194 C "Western Digital Caviar 120GB"
+"WDC WD1200JS-00MHB0"						194 C "Western Digital SE 300 Mb/s SATA 120 GB, 7200 RPM, 8 MB"
 "WDC WD1200JD-00(GBB|HBC)0"					194 C "Western Digital WD1200JD"
 "WDC WD1200LB-55EDA0"						194 C "Western Digital WD1220LB"
 "WDC WD1200SB-01KB[AC]0"					194 C "Western Digital Caviar RE (Raid Edition) 120 GB"
