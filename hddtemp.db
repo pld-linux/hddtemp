@@ -253,6 +253,7 @@
 "SAMSUNG HA(200|250)JC"					194  C	"Samsung SpinPoint V120CE series"
 "SAMSUNG HD160JJ"                                       194  C  "Samsung 160GB, 7200RPM, 8MB cache, SATA" 
 "SAMSUNG HD160JJ/P"					194  C	"Samsung SpinPoint P80 SD 160GB (7200RPM, 8MB cache)"
+"SAMSUNG HD083GJ"					194  C	"Samsung Spinpoint F1DT (7200RPM, 8 MB cache, SATA 3.0 Gbps)"
 "SAMSUNG HD[30|32|40][01]L[DJ]"                         194  C  "Samsung SpinPoint T133 series (300-400MB)"
 "SAMSUNG HD250KD"                                       194  C  "Samsung SpinPoint T133 series (250 MB PATA)"
 "SAMSUNG HD321KJ"					194  C  "Samsung Spinpoint T166 (7200RPM, 16MB cache) - SATA"
