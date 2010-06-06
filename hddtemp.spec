@@ -1,5 +1,5 @@
 %define		_beta	beta15
-%define		_rel	2
+%define		_rel	3
 Summary:	HDD temperature sensor
 Summary(pl.UTF-8):	Czujka temperatury dysku twardego
 Name:		hddtemp
@@ -14,6 +14,7 @@ Source1:	%{name}.db
 Source2:	%{name}d.init
 Source3:	%{name}d.sysconfig
 Source4:	%{name}-pl.po
+Patch0:		%{name}-reg_eip.patch
 URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -48,6 +49,7 @@ hddtemp w trybie demona.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_beta}
+%patch0 -p1
 
 cp %{SOURCE4} po/pl.po
 echo 'pl' >> po/LINGUAS
