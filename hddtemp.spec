@@ -44,7 +44,7 @@ Requires:	rc-scripts
 %description hddtempd
 hddtemp in daemon mode.
 
-%description hddtempd
+%description hddtempd -l pl.UTF-8
 hddtemp w trybie demona.
 
 %prep
