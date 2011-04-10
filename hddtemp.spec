@@ -15,6 +15,7 @@ Source2:	%{name}d.init
 Source3:	%{name}d.sysconfig
 Source4:	%{name}-pl.po
 Patch0:		%{name}-reg_eip.patch
+Patch1:		%{name}-ata-model.patch
 URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -50,6 +51,7 @@ hddtemp w trybie demona.
 %prep
 %setup -q -n %{name}-%{version}-%{subver}
 %patch0 -p1
+%patch1 -p1
 
 cp %{SOURCE4} po/pl.po
 echo 'pl' >> po/LINGUAS

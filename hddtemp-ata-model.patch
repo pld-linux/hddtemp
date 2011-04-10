@@ -1,0 +1,11 @@
+--- hddtemp-0.3-beta15/src/ata.c.orig	2006-04-26 05:09:52.000000000 +0200
++++ hddtemp-0.3-beta15/src/ata.c	2011-04-10 12:34:56.853323411 +0200
+@@ -65,7 +65,7 @@
+   if(device == -1 || ioctl(device, HDIO_GET_IDENTITY, sbuff))
+     return strdup(_("unknown"));
+   else
+-    return strdup((char*) ((u16*)sbuff + 27));
++    return strndup((char*) ((u16*)sbuff + 27), 40);
+ }
+ 
+ 
