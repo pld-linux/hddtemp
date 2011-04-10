@@ -1,15 +1,15 @@
-%define		_beta	beta15
-%define		_rel	3
+%define		subver	beta15
+%define		rel	4
 Summary:	HDD temperature sensor
 Summary(pl.UTF-8):	Czujka temperatury dysku twardego
 Name:		hddtemp
 Version:	0.3
-Release:	0.%{_beta}.%{_rel}
-License:	GPL v2
+Release:	0.%{subver}.%{rel}
+License:	GPL v2+
 Group:		Applications/System
-Source0:	http://www.guzu.net/files/%{name}-%{version}-%{_beta}.tar.bz2
+Source0:	http://www.guzu.net/files/%{name}-%{version}-%{subver}.tar.bz2
 # Source0-md5:	8b829339e1ae9df701684ec239021bb8
-# from http://www.guzu.net/linux/hddtemp.db
+# originally from http://www.guzu.net/linux/hddtemp.db, with PLD updates added in cvs
 Source1:	%{name}.db
 Source2:	%{name}d.init
 Source3:	%{name}d.sysconfig
@@ -48,7 +48,7 @@ hddtemp in daemon mode.
 hddtemp w trybie demona.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_beta}
+%setup -q -n %{name}-%{version}-%{subver}
 %patch0 -p1
 
 cp %{SOURCE4} po/pl.po
@@ -95,9 +95,9 @@ fi
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
-%attr(755,root,root) %{_sbindir}/*
-%{_mandir}/man8/*
-%{_datadir}/misc/*
+%attr(755,root,root) %{_sbindir}/hddtemp
+%{_mandir}/man8/hddtemp.8*
+%{_datadir}/misc/hddtemp.db
 
 %files hddtempd
 %defattr(644,root,root,755)
