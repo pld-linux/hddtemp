@@ -515,6 +515,8 @@
 "ST340215AS"                            194    C  "Seagate Barracuda 7200.10 SATA 40GB"
 "ST3300622AS"				194  C  "Seagate Barracuda 7200.9 SATA2.5 300GB"
 "ST3300831A"				194  C	"Seagate Barracuda 7200.8 PATA 300GB"
+"ST95005620AS"				194  C	"Seagate Momentus XT ST95005620AS 500 GB"
+"KINGSTON SNV425S264GB"			194  C  "KINGSTON SSD SNV425S264GB 64GB"
 
 "Maxtor 7(L|V)250(F|R|S)0"		194 C "Maxtor MaXLine III 250GB 7200rpm"
 "Maxtor 7(L|V)300(F|R|S)0"		194 C "Maxtor MaXLine III 300GB 7200rpm"
