@@ -466,6 +466,7 @@
 "WD4000YS-01MPB0"						194 C "Western Digital RE2 7200 SATA II 400 GB"
 "WDC WD5000BEVT-00A0RT0"					194 C "Western Digital Scorpio Blue 500GB, 8MB cache"
 "WDC WD10EARS-00Y5B1"						194 C "Western Digital Caviar Green 1TB, 64MB cache"
+"WDC WD20EARS-00MVWB0"						194 C "Western Digital Caviar Green 2TB, 64MB cache"
 
 # not sure for next
 # "WDC WD1200JB-00CRA1"		9   C "Western Digital 1200JB-00CRA1"
