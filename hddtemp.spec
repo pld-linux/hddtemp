@@ -18,7 +18,7 @@ Patch0:		%{name}-reg_eip.patch
 Patch1:		%{name}-ata-model.patch
 URL:		http://www.guzu.net/linux/hddtemp.php
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
