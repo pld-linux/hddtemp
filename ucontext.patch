@@ -1,0 +1,20 @@
+--- hddtemp-0.3-beta15/src/backtrace.c~	2019-11-08 20:03:20.000000000 +0100
++++ hddtemp-0.3-beta15/src/backtrace.c	2019-11-08 20:08:36.241726784 +0100
+@@ -36,7 +36,7 @@
+ #define MAX_BTSIZE 64
+ 
+ void backtrace_handler(int n, siginfo_t *ist, void *extra) {
+-  static struct ucontext *puc;
++  static struct ucontext_t *puc;
+   static void *btinfo[MAX_BTSIZE];
+   static char **messages = NULL;
+   static size_t btsize = 0;
+@@ -53,7 +53,7 @@
+ 
+ #define SIC_CASE(c) case c: strerr = #c
+ 
+-  puc = (struct ucontext *)extra;
++  puc = (struct ucontext_t *)extra;
+   switch(n) {
+   case SIGSEGV:
+     switch(ist->si_code) {
