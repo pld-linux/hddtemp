@@ -249,7 +249,7 @@
 ############# Samsung drives
 ########################################
 # somenone reported a problem with the SP8004H which reports a temperature
-# 10°C below the ambient temperature
+# 10Â°C below the ambient temperature
 "SAMSUNG HA(200|250)JC"					194  C	"Samsung SpinPoint V120CE series"
 "SAMSUNG HD160JJ"                                       194  C  "Samsung 160GB, 7200RPM, 8MB cache, SATA" 
 "SAMSUNG HD160JJ/P"					194  C	"Samsung SpinPoint P80 SD 160GB (7200RPM, 8MB cache)"
@@ -275,6 +275,7 @@
 #"SAMSUNG SV1204H"					194  C	"Samsung 120G"
 "SAMSUNG SV(0401|0802|1203|1604)N"			194  C	"Samsung SpinPoint V80 serie"
 "SAMSUNG SV4012H"					194  C	"Samsung 40GB, 5400RPM, 2MB cache"
+"Samsung SSD 850 EVO 1TB" 190 C "Samsung SSD 850 EVO 1TB"
 
 ########################################
 ############# Seagate drives
@@ -385,7 +386,7 @@
 "TOSHIBA MK8026GAX"			194  C	"Toshiba MK8026GAX" 
 
 "MK4025GAS"				194  C	"Toshiba MK4025GAS"
-
+"TOSHIBA MK1059GSMP"                    190  C  "TOSHIBA MK1059GSMP"
 
 ########################################
 ############# Western Digital drives
